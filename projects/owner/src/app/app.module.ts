@@ -12,7 +12,7 @@ import { OAuthModule } from 'angular-oauth2-oidc';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { CommonModule, MaterialModule } from 'common';
+import { CommonModule, MaterialModule } from './../../../common/src/lib/common.module';
 // import { MaterialModule } from './material.module';
 // import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 // import { MatButtonModule } from '@angular/material/button';
