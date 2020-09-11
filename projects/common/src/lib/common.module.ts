@@ -27,8 +27,7 @@ import { CommonComponent } from './common.component';
   providers: [ Apollo, HttpLink ],
   exports: [
     CommonComponent,
-    ZipadComponent,
-    MaterialModule
+    ZipadComponent
   ]
 })
 
