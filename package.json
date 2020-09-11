@@ -11,7 +11,7 @@
     "build:common": "ng build --project=common",
     "build:owner": "ng build --project=owner",
     "build:user": "ng build --project=user",
-    "postinstall": "ngcc --create-ivy-entry-points",
+    // "postinstall": "ngcc --create-ivy-entry-points",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
