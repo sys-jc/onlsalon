@@ -31,7 +31,7 @@ export class RegistComponent implements OnInit {
         'https://script.googleapis.com/$discovery/rest?version=v1',
       ], 
        clientId: '913080910103-0s805k1mjsgohs8begmklvrer1lu05ve.apps.googleusercontent.com',
-       scope: 'https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/forms'
+       scope: 'https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/forms https://www.googleapis.com/auth/spreadsheets'
      })
 
     });
