@@ -25,10 +25,15 @@
       "common": [
         "dist/common/common",
         "dist/common"
+      ],
+      "common/*": [
+        "dist/common/common/*",
+        "dist/common/*"
       ]
     }
   },
   "angularCompilerOptions": {
+    "enableIvy": false,
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
   }
