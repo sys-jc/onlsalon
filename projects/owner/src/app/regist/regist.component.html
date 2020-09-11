@@ -1,0 +1,47 @@
+<h2>オンラインサロン予約システム アカウント登録</h2>
+<mat-card>
+    <form class="container" ngDefaultControl ngNativeValidate fxLayout="column">
+        <mat-form-field>
+            <mat-label>予約システムアカウントID</mat-label>
+            <input matInput numberInput [value]="ownsrv.owner.dojoid" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>団体名or道場名</mat-label>
+            <input matInput [(ngModel)]="ownsrv.owner.dojoname" name="name" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>代表者姓</mat-label>
+            <input matInput [(ngModel)]="ownsrv.owner.sei" name="sei" required>
+        </mat-form-field>
+        <mat-form-field >
+            <mat-label>代表者名</mat-label>
+            <input matInput [(ngModel)]="ownsrv.owner.mei" name="mei" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>生年月日</mat-label>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="ownsrv.owner.birth" name="bir">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field >
+            <mat-label>連絡先電話番号</mat-label>
+            <input matInput [(ngModel)]="ownsrv.owner.tel" name="tel" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>メール</mat-label>
+            <input matInput [(ngModel)]="ownsrv.owner.mail" name="mai" disabled>
+        </mat-form-field>
+    </form>
+    <cm-zipad></cm-zipad>
+    <fieldset>
+        <legend>申込むサービスを選択してください</legend>
+        <div fxLayout="column"> 
+            <mat-checkbox [(ngModel)]="chOnline">イベント管理(事前決済のみ有料)</mat-checkbox>
+            <mat-checkbox [(ngModel)]="chMonfee">月謝・会費管理(有料)</mat-checkbox>
+            <mat-checkbox [(ngModel)]="chMember">名簿作成管理(有料)</mat-checkbox>
+        </div>
+    </fieldset>
+    <mat-card-actions>
+        <button mat-flat-button color="accent" (click)="ins_owner()">上記の内容で登録する</button>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,41 @@
+<!-- <mat-card> -->
+  <form class="example-form container" ngNativeValidate ybAddress (submit)="false" [ybAutocompleteMode]="'off'" #address="ybAddress" fxLayout="column">
+    <mat-form-field>
+      <mat-label>郵便番号</mat-label>
+      <input matInput [(ngModel)]="cmsrv.zipad.zip" [ngModelOptions]="{standalone: true}" ybPostalCode required>
+      <button mat-button matSuffix mat-stroked-button aria-label="get" (click)="address.complete()">
+        住所補完
+      </button>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>都道府県</mat-label>
+      <input matInput [(ngModel)]="cmsrv.zipad.region" [ngModelOptions]="{standalone: true}" ybRegion required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="localityInput">市区町村</mat-label>
+      <input matInput id="localityInput" [(ngModel)]="cmsrv.zipad.local" [ngModelOptions]="{standalone: true}" ybLocality required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label  for="streetInput">町名・番地</mat-label>
+      <input matInput id="streetInput" [(ngModel)]="cmsrv.zipad.street" [ngModelOptions]="{standalone: true}" ybStreet required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>マンション・ビル名</mat-label>
+      <input matInput id="extendedInput" [(ngModel)]="cmsrv.zipad.extend" [ngModelOptions]="{standalone: true}" ybExtended>
+    </mat-form-field>
+  </form>
+<!-- </mat-card> -->
+
+<!-- <form class="example-form" ybAddress>
+
+  <input placeholder="郵便番号" ybPostalCode>
+
+  <input placeholder="都道府県" ybRegion>
+
+  <input placeholder="市区町村" ybLocality>
+
+  <input placeholder="町名" ybStreet>
+
+  <input placeholder="その他" ybExtended>
+
+</form> -->
