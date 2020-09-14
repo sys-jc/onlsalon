@@ -156,6 +156,7 @@
               "projects/user/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/user/src/styles.scss"
             ],
             "scripts": []
@@ -220,6 +221,7 @@
               "projects/user/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/user/src/styles.scss"
             ],
             "scripts": []
@@ -292,6 +294,6 @@
         }
       }
     }
-  }, 
+  },
   "defaultProject": "owner"
 }
