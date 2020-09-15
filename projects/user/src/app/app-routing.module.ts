@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './user.component';
 
 const routes: Routes = [
-  {path: 'user', component: UserComponent},
-  {path: 'user/:form', component: UserComponent},
-  {path: 'user/:form/:dojo', component: UserComponent},
+  {path: 'goto', component: UserComponent},
+  {path: 'goto/:form', component: UserComponent},
+  {path: 'goto/:form/:dojo', component: UserComponent},
 
-  {path: '**', redirectTo: 'user', pathMatch: 'full'}
+  {path: '**', redirectTo: 'goto', pathMatch: 'full'}
 ];
 
 @NgModule({

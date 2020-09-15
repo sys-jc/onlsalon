@@ -1,15 +1,23 @@
 import gql from 'graphql-tag';
 
 export const GetQuery1 = gql`
-query get_member($gid: String!,$did: String!) {
-  tblmember(where: {googleid: {_eq: $gid}, dojoid: {_eq: $did}}) {
+query get_user($gid: String!,$did: Int!) {
+  tbluser(where: {googleid: {_eq: $gid}, dojoid: {_eq: $did}}) {
+    userid
+    googleid
+    dojoid
+    mail
     sei
     mei
-    memid
-    memeda
-    class
     birth
-    mail
+    class
+    eda
+    zip
+    region
+    local
+    street
+    extend
+    tel
     id
   }
 }`;

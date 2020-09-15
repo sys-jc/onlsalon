@@ -3,7 +3,7 @@ import { CommonService,Zipad } from '../common.service';
 
 export class User {
   userid:number;
-  googlid:string;
+  googleid:string;
   dojoid:number;
   mail:string;
   sei:string;

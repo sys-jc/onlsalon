@@ -9,7 +9,7 @@ export const authConfig: AuthConfig = {
 
   // The SPA's id. The SPA is registerd with this id at the auth-server
   // clientId: 'server.code',
-  clientId: '913080910103-0s805k1mjsgohs8begmklvrer1lu05ve.apps.googleusercontent.com',
+  clientId: '913080910103-7669248bdjemsk0qdoh71dub1bj7bs9p.apps.googleusercontent.com',
 
   // Just needed if your auth server demands a secret. In general, this
   // is a sign that the auth server is not configured with SPAs in mind
@@ -25,7 +25,7 @@ export const authConfig: AuthConfig = {
   // The api scope is a usecase specific one
   // requestAccessToken: false,
 
-  scope: 'openid profile email https://www.googleapis.com/auth/drive',
+  scope: 'openid profile email',
 
   showDebugInformation: true,
 

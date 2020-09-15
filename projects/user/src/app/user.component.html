@@ -1,7 +1,42 @@
 <mat-card>
-    <mat-card-actions>
-      <button style="border:0;background:none;" (click)="login()">
-        <img src="assets/btn_google_signin_dark_normal_web.png" />
-      </button>
-    </mat-card-actions>
+  <mat-card-actions>
+    <button style="border:0;background:none;" (click)="login()">
+      <img src="assets/btn_google_signin_dark_normal_web.png" />
+    </button>
+  </mat-card-actions>
+  <mat-card-content  [style.display]="claims ? 'block' : 'none'">
+    <form fxLayout="column">
+      <h2>空手オンラインサロン予約 登録者情報（道場名： {{dojo}}  )</h2>
+      <mat-form-field>
+        <mat-label>道場ID</mat-label>
+        <input matInput numberInput [value]="djid" disabled>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>道場会員番号</mat-label>
+        <input matInput [value]="usrsrv.user.userid" disabled>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>姓</mat-label>
+        <input matInput [(ngModel)]="usrsrv.user.sei" name="sei">
+      </mat-form-field>
+      <mat-form-field >
+        <mat-label>名</mat-label>
+        <input matInput [(ngModel)]="usrsrv.user.mei" name="mei">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>クラス</mat-label>
+        <input matInput [(ngModel)]="usrsrv.user.class" name="cla">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>生年月日</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="usrsrv.user.birth" name="bir">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </form>
+    <cm-zipad></cm-zipad>
+  </mat-card-content>
+  <p [style.display]="claims ? 'none' : 'block'"> 上の「sign in with google」ボタンをクリックして、googleアカウントでログインするか、新規アカウントを作成してください </p>    
+
+  <button mat-flat-button color="accent" (click)="goForm()" [style.display]="claims ? 'block' : 'none'">予約申込</button>
 </mat-card>
