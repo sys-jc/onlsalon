@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
-// import { CommonModule } from './../../../common/src/lib/common.module';
+import { CommonModule } from './../../../common/src/lib/common.module';
 // import { MaterialModule } from './../../../common/src/lib/material.module';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { MaterialModule } from './material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     // OAuthModule.forRoot(),
-    // CommonModule,
+    CommonModule,
     FormsModule,
     FlexLayoutModule,
     MaterialModule 
