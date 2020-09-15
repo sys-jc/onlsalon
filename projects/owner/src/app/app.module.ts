@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from './../../../common/src/lib/common.module';
 import { MaterialModule } from './../../../common/src/lib/material.module';
+import { NavbarComponent } from './navbar/navbar.component';
 // import { MaterialModule } from './material.module';
 // import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 // import { MatButtonModule } from '@angular/material/button';
@@ -28,7 +29,8 @@ import { MaterialModule } from './../../../common/src/lib/material.module';
     AppComponent,
     HomeComponent,
     RegistComponent,
-    AdminComponent
+    AdminComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

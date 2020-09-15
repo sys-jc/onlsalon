@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { Apollo } from 'apollo-angular';
+import { HttpLink } from 'apollo-angular-link-http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user.component';
@@ -28,7 +29,7 @@ import { MaterialModule } from './material.module';
     FlexLayoutModule,
     MaterialModule 
   ],
-  providers: [],
+  providers: [ Apollo, HttpLink ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
