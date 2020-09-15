@@ -9,8 +9,9 @@ import { UserComponent } from './user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { CommonModule } from './../../../common/src/lib/common.module';
-import { MaterialModule } from './../../../common/src/lib/material.module';
+import { MaterialModule } from './material.module';
+// import { CommonModule } from './../../../common/src/lib/common.module';
+// import { MaterialModule } from './../../../common/src/lib/material.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { MaterialModule } from './../../../common/src/lib/material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     // OAuthModule.forRoot(),
-    CommonModule,
+    // CommonModule,
     FormsModule,
     FlexLayoutModule,
     MaterialModule 
