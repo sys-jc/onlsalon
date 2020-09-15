@@ -74,7 +74,8 @@ export class UserComponent implements OnInit {
   }
 
   public login():void{
-    this.oauthService.revokeTokenAndLogout();
+    this.oauthService.logOut();
+    // this.oauthService.revokeTokenAndLogout();
     this.oauthService.initLoginFlow();
   }
   public goForm() {

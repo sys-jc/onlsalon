@@ -16,7 +16,7 @@ export const authConfig: AuthConfig = {
   // and it might not enforce further best practices vital for security
   // such applications.
   // dummyClientSecret: 'secret',
-  revocationEndpoint:'https://onlinesalon.herokuapp.com/user/goto',
+  // revocationEndpoint:'https://onlinesalon.herokuapp.com/user/goto',
 //   responseType: 'code',
 
   // set the scope for the permissions the client should request
