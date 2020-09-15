@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap  } from '@angular/router';
-import { OAuthService } from 'angular-oauth2-oidc';
+// import { OAuthService } from 'angular-oauth2-oidc';
 import { Apollo } from 'apollo-angular';
 import * as Query from './queries';
 import { User, UserService } from 'common';
@@ -17,7 +17,7 @@ export class UserComponent implements OnInit {
   public dojo:string;
   public form:string;
   constructor(private route: ActivatedRoute,
-              private oauthService: OAuthService,
+              // private oauthService: OAuthService,
               private apollo: Apollo,
               public usrsrv: UserService) { }
 
@@ -44,17 +44,18 @@ export class UserComponent implements OnInit {
 
  // 初期処理
  private async oauthInit() {
-  this.oauthService.setStorage(localStorage);
-  await this.oauthService.setupAutomaticSilentRefresh();
-// この非同期処理を行わないとユーザー情報が取得できない
-  await this.oauthService.loadDiscoveryDocument()
-  .then(() => this.oauthService.tryLogin());
-  this.claims = this.oauthService.getIdentityClaims();
+//   this.oauthService.setStorage(localStorage);
+//   await this.oauthService.setupAutomaticSilentRefresh();
+// // この非同期処理を行わないとユーザー情報が取得できない
+//   await this.oauthService.loadDiscoveryDocument()
+//   .then(() => this.oauthService.tryLogin());
+//   this.claims = this.oauthService.getIdentityClaims();
   console.log("init",this.claims);
   this.apollo.watchQuery<any>({
     query: Query.GetQuery1,
     variables: { 
-        gid:this.claims.sub,
+        // gid:this.claims.sub,
+        gid:'DUMMY',
         did:this.djid
       },
     })
@@ -74,9 +75,9 @@ export class UserComponent implements OnInit {
   }
 
   public login():void{
-    this.oauthService.logOut();
+    // this.oauthService.logOut();
     // this.oauthService.revokeTokenAndLogout();
-    this.oauthService.initLoginFlow();
+    // this.oauthService.initLoginFlow();
   }
   public goForm() {
 
