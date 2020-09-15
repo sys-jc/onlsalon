@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap  } from '@angular/router';
 import { OAuthService } from 'angular-oauth2-oidc';
-// import { Apollo } from 'apollo-angular';
-// import * as Query from './queries';
+import { Apollo } from 'apollo-angular';
+import * as Query from './queries';
 import { User, UserService } from 'common';
 
 @Component({
@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
   public form:string;
   constructor(private route: ActivatedRoute,
               private oauthService: OAuthService,
-              // private apollo: Apollo,
+              private apollo: Apollo,
               public usrsrv: UserService) { }
 
   ngOnInit(): void {
@@ -51,26 +51,26 @@ export class UserComponent implements OnInit {
   .then(() => this.oauthService.tryLogin());
   this.claims = this.oauthService.getIdentityClaims();
   console.log("init",this.claims);
-  // this.apollo.watchQuery<any>({
-  //   query: Query.GetQuery1,
-  //   variables: { 
-  //       gid:this.claims.sub,
-  //       did:this.djid
-  //     },
-  //   })
-  //   .valueChanges
-  //   .subscribe(({ data }) => {
-  //     if (data.tbluser.length==0){
-  //       this.flgEx=false;
+  this.apollo.watchQuery<any>({
+    query: Query.GetQuery1,
+    variables: { 
+        gid:this.claims.sub,
+        did:this.djid
+      },
+    })
+    .valueChanges
+    .subscribe(({ data }) => {
+      if (data.tbluser.length==0){
+        this.flgEx=false;
         this.usrsrv.user.googleid=this.claims.sub;
         this.usrsrv.user.sei=this.claims.family_name;
         this.usrsrv.user.mei=this.claims.given_name;
         this.usrsrv.user.mail=this.claims.email;
-  //     } else { 
-  //       this.flgEx=true;
-  //       this.usrsrv.user = data.tbluser[0];
-  //     }
-  //   });
+      } else { 
+        this.flgEx=true;
+        this.usrsrv.user = data.tbluser[0];
+      }
+    });
   }
 
   public login():void{
