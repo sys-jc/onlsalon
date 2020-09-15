@@ -23,7 +23,7 @@ import { MaterialModule } from './material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     // OAuthModule.forRoot(),
-    CommonModule,
+    // CommonModule,
     FormsModule,
     FlexLayoutModule,
     MaterialModule 
